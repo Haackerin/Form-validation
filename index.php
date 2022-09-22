@@ -16,22 +16,7 @@ require_once './validation.php';
   <div class="container sign-up-mode">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="/" class="sign-in-form">
-          <h2 class="title disable-select">ورود (بزودی)</h2>
 
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="ایمیل" disabled class="disable-select">
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="رمز عبور" disabled class="disable-select">
-
-          </div>
-
-          <input type="submit" value="ورود" class="btn solid login-btn" disabled>
-
-        </form>
         <form action="/" method="POST" class="sign-up-form">
           <h2 class="title">ثبت نام</h2>
           <div class="input-field">
@@ -129,15 +114,17 @@ require_once './validation.php';
           <p>
             شما میتوانید از بخش ورود به حساب کاربری خود وارد شوید
           </p>
-          <button class="btn transparent" id="sign-in-btn">
-            ورود
-          </button>
+          <a href="./users.php">  
+            <button class="btn transparent" id="sign-in-btn">
+              لیست کاربران
+            </button>
+          </a>
         </div>
         <img src="img/login.svg" class="image" alt="Login" >
       </div>
     </div>
   </div>
-  <script src="scripts/main.js"></script>
+  <!-- <script src="scripts/main.js"></script> -->
 </body>
 
 </html>
