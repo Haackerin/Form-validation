@@ -17,6 +17,7 @@ validations of this project consists of :
 * email can`t be repetitious
 * password can`t be empty
 * password can`t fewer than 6 character
+* passwolrd and confirm password must be equal
 * user must accept the agreements
 <br /><br /><br />
 ### validation error ###
