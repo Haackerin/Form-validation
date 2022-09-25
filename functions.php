@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 error_reporting(0);
-function request(string $field): string | NULL
+function request(string $field): ?string
 {
     return isset($_REQUEST[$field]) && $_REQUEST[$field] != '' ? trim($_REQUEST[$field]) : NULL;
 }
@@ -12,29 +13,44 @@ function has_error(string $field): bool
     return isset($error[$field]) ? true : false;
 }
 
-function error(string $field): string | NULL
+function error(string $field): ?string
 {
     global $error;
     return has_error($field) ? $error[$field] : NULL;
 }
 
+function database_link(string $database_name, string $username, string $password): bool
+{
+    global $link;
+    $link = mysqli_connect('localhost:3306', $username, $password);
+    if (!$link) {
+        return false;
+        die;
+    }
+
+    if (!mysqli_select_db($link, $database_name)) {
+        return false;
+        die;
+    }
+    if (!mysqli_query($link, "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL, tel BIGINT, password VARCHAR(100) NOT NULL, PRIMARY KEY(id))")) {
+        return false;
+        die;
+    }
+
+    return true;
+}
+
 function is_repeaty(string $userintered, string $data_title): bool
 {
-
-    if (!$link = mysqli_connect('localhost:3306', 'root', '')) {
-        echo 'error :  ' . mysqli_connect_error();
-        die;
-    }
-    if (!mysqli_select_db($link, 'panel')) {
-        echo 'error :  ' . mysqli_error($link);
-        die;
-    }
+    global $link;
+    database_link('netroozn_panel', 'netroozn_amir', 'A.h.s0518');
 
     if (!$result = mysqli_query($link, "SELECT * FROM users")) {
         echo 'error :  ' . mysqli_error($link);
         die;
     }
-// mysqli_fetch_assoc () به دیتابیس میرود و هر بار یک سطر از نتیجه را در قالب آرایه
+    // mysqli_fetch_assoc () به دیتابیس میرود و هر بار یک سطر از نتیجه را در قالب آرایه
     while ($user = mysqli_fetch_assoc($result)) {
         if (is_null($user)) {
             return false;

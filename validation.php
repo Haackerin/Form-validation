@@ -1,21 +1,8 @@
 <?php
 require_once './functions.php';
-$link = mysqli_connect('localhost:3306', 'root', '');
-if (!$link) {
-    echo 'error :  ' . mysqli_connect_error();
-    die;
-}
-if (!mysqli_query($link, "CREATE DATABASE IF NOT EXISTS panel")) {
-    echo "error :  " . mysqli_error($link);
-    die;
-}
-if (!mysqli_select_db($link, 'panel')) {
-    echo "error :  " . mysqli_error($link);
-    die;
-}
-if (!mysqli_query($link, "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(100) NOT NULL,
- email VARCHAR(100) NOT NULL, tel BIGINT, password VARCHAR(100) NOT NULL, PRIMARY KEY(id))")) {
-    echo "error :  " . mysqli_error($link);
+
+if (!database_link('netroozn_panel', 'netroozn_amir', 'A.h.s0518')) {
+    echo 'database error!';
     die;
 }
 

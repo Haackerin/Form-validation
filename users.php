@@ -1,13 +1,5 @@
 <?php
-if(!$link = mysqli_connect('localhost:3306', 'root', '')){
-    echo 'error :  ' . mysqli_connect_error();
-    die;
-}
-
-if (!mysqli_select_db($link, 'panel')) {
-    echo "error :  " . mysqli_error($link);
-    die;
-}
+require_once './validation.php';
 
 if (!$resault = mysqli_query($link, "SELECT * FROM users")) {
     echo 'error :  ' . mysqli_error($link);

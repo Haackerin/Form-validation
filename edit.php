@@ -4,15 +4,6 @@ if (!isset($_GET['id']) || $_GET['id'] == '') {
     header("Location: /users.php");
 }
 
-if (!$link = mysqli_connect('localhost:3306', 'root', '')) {
-    echo 'error :  ' . mysqli_connect_error();
-    die;
-}
-
-if (!mysqli_select_db($link, 'panel')) {
-    echo 'error :  ' . mysqli_error($link);
-    die;
-}
 $id = (int) $_GET['id'];
 $stmt = mysqli_prepare($link, "SELECT * FROM users WHERE id = ?");
 mysqli_stmt_bind_param($stmt, 'i', $id);
@@ -34,7 +25,7 @@ if ($result->num_rows != 1) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="style.css">
         <title>ویرایش کاربر</title>
     </head>
 
