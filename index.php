@@ -115,7 +115,7 @@ require_once './validation.php';
             شما میتوانید از بخش لیست کاربران کسانی که در سایت ثبت نام کرده اند را مشاهده کنید
           </p>
           <a href="./users.php">  
-            <button class="btn transparent" id="sign-in-btn">
+            <button class="btn transparent">
               لیست کاربران
             </button>
           </a>
@@ -124,7 +124,6 @@ require_once './validation.php';
       </div>
     </div>
   </div>
-  <!-- <script src="scripts/main.js"></script> -->
 </body>
 
 </html>

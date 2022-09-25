@@ -45,9 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         !is_null($username)
         && !is_null($email)
         && !is_null($password)
+        && strlen($password) > 6
         && $password == $confirm_password
         && !is_repeaty($username, 'username')
         && !is_repeaty($email, 'email')
+        
     ) {
 
         if ($_SERVER['SCRIPT_NAME'] == "/index.php") {
