@@ -110,9 +110,9 @@ require_once './validation.php';
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <h3>آیا حساب کاربری دارید؟</h3>
+          <h3> لیست کاربران </h3>
           <p>
-            شما میتوانید از بخش ورود به حساب کاربری خود وارد شوید
+            شما میتوانید از بخش لیست کاربران کسانی که در سایت ثبت نام کرده اند را مشاهده کنید
           </p>
           <a href="./users.php">  
             <button class="btn transparent" id="sign-in-btn">
