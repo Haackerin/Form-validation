@@ -35,6 +35,3 @@ you can edit users data from this page.
 <br /><br /><br />
 ![template view](http://sefidgar.netrooz.net/img/editpage.png)
 
-<br /><br /><br /><br />
-# demo #
-you can  see a demo from this project from this link => https://sefidgar.netrooz.net
