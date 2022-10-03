@@ -34,6 +34,5 @@ you can see all of users in this page
 you can edit users data from this page.
 <br /><br /><br />
 
-boz
 ![template view](http://sefidgar.netrooz.net/img/editpage.png)
 
