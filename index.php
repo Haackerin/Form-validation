@@ -1,129 +1,124 @@
 <?php
 require_once './validation.php';
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles/style.css" >
-  <title>ورود / ثبت نام</title>
+    <title>ثبت نام</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/all.min.css">
+
+
 </head>
 
 <body>
-  <div class="container sign-up-mode">
-    <div class="forms-container">
-      <div class="signin-signup">
 
-        <form action="/" method="POST" class="sign-up-form">
-          <h2 class="title">ثبت نام</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" name="username" placeholder="نام کاربری *" >
-          </div>
-          <?php
-          if (has_error('username')) {
-          ?>
-            <div class="error"><?= error('username') ?></div>
-          <?php
-          }
-          ?>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" placeholder="ایمیل *">
-          </div>
-          <?php
-          if (has_error('email')) {
-          ?>
-            <div class="error"><?= error('email') ?></div>
-          <?php
-          }
-          ?>
-          <div class="input-field">
-            <i class="fas fa-phone"></i>
-            <input type="tel" name="tel" placeholder="شماره همراه (اختیاری)" maxlength="11">
-          </div>
 
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="رمز عبور *" >
-          </div>
-          <?php
-          if (has_error('password')) {
-          ?>
-            <div class="error"><?= error('password') ?></div>
-          <?php
-          }
-          ?>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="confirm_password" placeholder="تایید رمز عبور *" >
-          </div>
-          <?php
-          if (has_error('confirm_password')) {
-          ?>
-            <div class="error"><?= error('confirm_password') ?></div>
-          <?php
-          }
-          ?>
-          <br>
-          <div class="input-check">
-            <input type="checkbox" name="agr" id="agreement"> <label for="agreement"> تمامی قوانین و مقررات را می پذیرم</label>
-          </div>
-          <br>
-          <?php
-          if (has_error('agr')) {
-          ?>
-            <div class="error"><?= error('agr') ?></div>
-          <?php
-          }
-          ?>
 
-          <?php
-          if ($success) {
-          ?>
-            <div class="success"> اطلاعات با موفقیت ذخیره شد </div>
-          <?php
-          }
-          ?>
 
-          <input type="submit" class="btn" value="ثبت نام" >
+    <div class="box">
+        <form class="form-box" action="/" method="POST">
+
+            <div class="field">
+                <label for="exampleEmail1" class="field-label"> :نام کاربری </label>
+                <input id="exampleEmail1" type="text" placeholder="@aliprogram" class="input" name="username">
+            </div>
+            <?php
+            if (has_error('username')) {
+            ?>
+                <div class="error"><?= error('username') ?></div>
+            <?php
+            }
+            ?>
+
+            <div class="field">
+                <label for="exampleEmail1" class="field-label"> :ایمیل </label>
+                <input id="exampleEmail1" type="text" placeholder="info@gmail.com " class="input" name="email">
+            </div>
+            <?php
+            if (has_error('email')) {
+            ?>
+                <div class="error"><?= error('email') ?></div>
+            <?php
+            }
+            ?>
+            <div class="field">
+                <label for="exampleEmail1" class="field-label"> :شماره همراه (اختیاری) </label>
+                <input id="exampleEmail1" type="text" placeholder="09332333643" class="input">
+            </div>
+            <div class="field ">
+                <label for="examplePassword1 " class="field-label ">رمز عبور</label>
+                <input id="id_password " name="password" type="password" class="input examplePassword1 ">
+                <i class="far fa-eye " id="togglePassword "></i>
+            </div>
+            <?php
+            if (has_error('password')) {
+            ?>
+                <div class="error"><?= error('password') ?></div>
+            <?php
+            }
+            ?>
+
+            <div class="field">
+                <label for="examplePassword1" class="field-label"> تایید رمز عبور</label>
+                <input id="examplePassword1" type="password" name="confirm_password" class="input">
+            </div>
+            <?php
+            if (has_error('confirm_password')) {
+            ?>
+                <div class="error"><?= error('confirm_password') ?></div>
+            <?php
+            }
+            ?>
+            <div class="field">
+                <label class="checkbox">
+                    <span class="checkbox-label" style="margin-right:5px ;" data-ripple-light="true">تمامی قوانین را می پذیریم </span>
+                    <input type="checkbox" class="checkbox-input" name="agr">
+                </label>
+                <?php
+                if (has_error('agr')) {
+                ?>
+                    <div class="error"><?= error('agr') ?></div>
+                <?php
+                }
+                ?>
+
+                <?php
+                if ($success) {
+                ?>
+                    <div class="success"> اطلاعات با موفقیت ذخیره شد </div>
+                <?php
+                }
+                ?>
+
+            </div>
+
+            <button class="button">ثبت نام</button>
+
+
 
         </form>
-      </div>
-    </div>
 
-    <div class="panels-container">
-      <div class="panel left-panel">
-        <div class="content">
-          <h3>حساب کاربری ندارید؟</h3>
-          <p>
-            شما میتوانید از بخش ثبت نام برای خود یک حساب کاربری بسازید
-          </p>
-          <button class="btn transparent" id="sign-up-btn">
-            ساختن حساب کاربری
-          </button>
-        </div>
-        <img src="img/register.svg" class="image" alt="Register" >
-      </div>
-      <div class="panel right-panel">
-        <div class="content">
-          <h3> لیست کاربران </h3>
-          <p>
-            شما میتوانید از بخش لیست کاربران کسانی که در سایت ثبت نام کرده اند را مشاهده کنید
-          </p>
-          <a href="./users.php">  
-            <button class="btn transparent">
-              لیست کاربران
-            </button>
-          </a>
-        </div>
-        <img src="img/login.svg" class="image" alt="Login" >
-      </div>
+        <a class="circle-01" href="./users2.php">
+            <i class="fad fa-users"></i>
+        </a>
+        <div class="circle-02"></div>
+
     </div>
-  </div>
+    </div>
+    <script>
+        var togglePassword = document.getElementById("togglePassword ");
+        var password = document.getElementById("id_password ");
+        password.type = "password";
+        togglePassword.addEventListener('click', function(e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 
 </html>

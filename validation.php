@@ -1,7 +1,7 @@
 <?php
 require_once './functions.php';
 
-if (!database_link('netroozn_panel', 'netroozn_amir', 'A.h.s0518')) {
+if (!database_link('panel','root','')) {
     echo 'database error!';
     die;
 }

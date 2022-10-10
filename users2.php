@@ -3,8 +3,8 @@
 
 <head>
     <title>کاربران</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/all.min.css">
 
 </head>
 
@@ -106,7 +106,7 @@
     </div>
     </div>
 
-    <script src="script.js "></script>
+    <!-- <script src="script.js"></script> -->
     <!-- from node_modules -->
 
 

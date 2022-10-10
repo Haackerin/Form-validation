@@ -44,7 +44,7 @@ function database_link(string $database_name, string $username, string $password
 function is_repeaty(string $userintered, string $data_title): bool
 {
     global $link;
-    database_link('netroozn_panel', 'netroozn_amir', 'A.h.s0518');
+    database_link('panel', 'root', '');
 
     if (!$result = mysqli_query($link, "SELECT * FROM users")) {
         echo 'error :  ' . mysqli_error($link);
